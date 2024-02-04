@@ -13,7 +13,7 @@
 ### Setup Requires
 
 - [Neovim](https://neovim.io/) (Version 0.9 or Later)
-- [Nerd Font](https://www.nerdfonts.com/) - I use Meslo Nerd Font
+- [Nerd Font](https://www.nerdfonts.com/) - I use JetBrainsMonoNerdFontMono-Regular
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) - For Telescope Fuzzy Finder
 
 ## Plugins
@@ -28,7 +28,7 @@
 
 #### Preferred Colorscheme
 
-- [bluz71/vim-nightfly-guicolors](https://github.com/bluz71/vim-nightfly-guicolors)
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 
 #### File Explorer
 
