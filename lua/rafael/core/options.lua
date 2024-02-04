@@ -1,17 +1,19 @@
 local options = {
     cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+    encoding = "utf-8",                      -- handles things like table lines
     fileencoding = "utf-8",                  -- the encoding written to a file
     tabstop = 4,                             -- insert 4 spaces for a tab
     softtabstop = 4,
     shiftwidth = 4,                          -- the number of spaces inserted for each indentation
     expandtab = true,                        -- In Insert mode: convert tabs to spaces
+    hidden = true,                           -- allows you to move around files quickly w/out worrying about whether they're written to disk
     mouse = "",                              -- allow the mouse to be used in neovim
     mousefocus = true,
     mousehide = true,
     mousemodel = "extend",
     autoindent = true,
     textwidth = 130,
-    backspace = indent,eol,start,
+    backspace = "indent,eol,start",          -- allow backspace on indent, end of line or insert mode start position
     backup = false,                          -- creates a backup file
     clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
     completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -19,12 +21,10 @@ local options = {
     hlsearch = true,                         -- highlight all matches on previous search pattern
     ignorecase = true,                       -- ignore case in search patterns
     pumheight = 10,                          -- pop up menu height
-    showmode = false,                         -- we don't need to see things like -- INSERT -- anymore
+    showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2,                         -- always show tabs
     smartcase = true,                        -- smart case
     smartindent = true,                      -- make indenting smarter again
-    splitbelow = true,                       -- force all horizontal splits to go below current window
-    splitright = true,                       -- force all vertical splits to go to the right of current window
     swapfile = false,                        -- creates a swapfile
     termguicolors = true,                    -- set term gui colors to enable highlight groups (most terminals support this)
     timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -40,6 +40,8 @@ local options = {
     scrolloff = 999,                         -- is one of my fav
     sidescrolloff = 8,
     guifont = "monospace:h17",               -- the font used in graphical neovim applications
+    splitright = true,                       -- force all vertical splits to go to the right of current window
+    splitbelow = true,                       -- force all horizontal splits to go below current window
 }
 
 vim.opt.shortmess:append "at"
