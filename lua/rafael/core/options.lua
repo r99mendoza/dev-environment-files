@@ -84,7 +84,7 @@ else
     vim.g.python3_host_prog = "$HOME/envs/python3.11.4/bin/python3"
 end
 
-vim.g.node_host_prog = "/usr/bin/node"
+-- vim.g.node_host_prog = "/bin/node"
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 
