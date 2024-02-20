@@ -4,7 +4,9 @@ return {
     config = function()
         local nvimtree = require("nvim-tree")
 
-        -- recommended settings from nvim-tree documentation
+        -- Recommended settings from nvim-tree documentation
+        -- If you want to use plugins, but for some reason don't wish to use netrw, then
+        -- you need to avoid loading both the plugin and the autoload portions of netrw.
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
@@ -57,5 +59,5 @@ return {
         keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
         keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
         keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
-    end,
+    end
 }

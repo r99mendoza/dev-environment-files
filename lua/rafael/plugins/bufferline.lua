@@ -8,7 +8,7 @@ return {
         bufferline.setup({
             options = {
                 mode = "buffers",
-                separator_style = "slant",
+                separator_style = "slant", -- slant, slope, thick, thin
                 style_preset = {
                     bufferline.style_preset.no_italic,
                     bufferline.style_preset.no_bold

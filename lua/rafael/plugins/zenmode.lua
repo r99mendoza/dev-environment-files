@@ -1,5 +1,6 @@
 return {
     "folke/zen-mode.nvim",
+    enable = true,
     opts = {
         plugins = {
             tmux = { enabled = false }, -- disables the tmux statusline
@@ -7,7 +8,7 @@ return {
             -- to make this work, you need to set the following kitty options:
             -- - allow_remote_control socket-only
             -- - listen_on unix:/tmp/kitty
-            kitty = {
+            kitty = { -- Kovid Goyal kitty
                 enabled = false,
                 font = "+2", -- font size increment
             },

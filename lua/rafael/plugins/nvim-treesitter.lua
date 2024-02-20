@@ -2,6 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
+    -- dependencies not really needed, can delete
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
@@ -9,20 +10,23 @@ return {
     config = function()
         local treesitter = require("nvim-treesitter.configs")
 
-        treesitter.setup({ -- enable syntax highlighting
-            highlight = { enable = true },
+        treesitter.setup({
+            highlight = { -- enable syntax highlighting
+                enable = true,
+                disable = { "verilog" },
+            },
             indent = { enable = true },
-            auto_install = true,
+            auto_install = true, -- Set false if no internet.
             -- enable autotagging (w/ nvim-ts-autotag plugin)
             autotag = { enable = true },
             -- ensure these language parsers are installed
             ensure_installed = {
                 "python",
-                "json",
-                "yaml",
-                "html",
                 "bash",
+                "yaml",
+                "json",
                 "lua",
+                "html",
                 "vim",
                 "gitignore",
             },

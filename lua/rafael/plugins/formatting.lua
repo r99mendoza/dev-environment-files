@@ -20,6 +20,11 @@ return {
                 async = false,
                 timeout_ms = 1000,
             },
+            -- formatters = {
+            --     black = {
+            --         command = "black"
+            --     }
+            -- },
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>mp", function()

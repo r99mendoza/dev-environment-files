@@ -19,35 +19,35 @@ vim.g.maplocalleader = " "
 --   command_mode = "c"
 
 -- Normal --
--- Better Window Navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Remapping v -> V and V -> v
 keymap("n", "v", "V", opts)
 keymap("n", "V", "v", opts)
 
--- clear search highlights
-keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
-
--- enter zenmode
--- leave zenmode with -- :ZenMode -- :close -- :quit aka :q
-keymap("n", "<leader>zm", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
-
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "e", ":e<space>", { desc = "Toggle file open" })
+keymap("n", "<leader>s", ":write<CR>", { desc = "Save changes to file" })
+keymap("n", "<leader>nh", ":nohl<CR>", { noremap = true, silent = true, desc = "Clear search highlights" })
+keymap("n", "<leader>zm", ":ZenMode<CR>", { noremap = true, silent = true, desc = "Toggle Zen Mode" })
 
 -- Navigate buffers
 keymap("n", "<C-j>", ":bnext<CR>", opts)
 keymap("n", "<C-k>", ":bprevious<CR>", opts)
 
+-- splits
+keymap("n", "<leader>v", ":vsplit<cr>", opts)
+
+-- Better Window Navigation
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- Resize with arrows
+-- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
 -- Insert --
--- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit insert mode with jk"})
 
 -- Visual --

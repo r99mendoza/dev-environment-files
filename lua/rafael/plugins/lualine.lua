@@ -53,8 +53,8 @@ return {
         lualine.setup({
             options = {
                 icons_enable = true,
-                theme = my_lualine_theme,
-                -- theme = "tokyonight",
+                -- theme = my_lualine_theme,
+                theme = "tokyonight",
                 disabled_filetypes = {
                     statusline = {"NvimTree"}
                 },
