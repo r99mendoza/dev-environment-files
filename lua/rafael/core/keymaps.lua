@@ -22,8 +22,10 @@ vim.g.maplocalleader = " "
 -- Remapping v -> V and V -> v
 keymap("n", "v", "V", opts)
 keymap("n", "V", "v", opts)
-
 keymap("n", "e", ":e<space>", { desc = "Toggle file open" })
+keymap("n", "<leader>it", ":IBLToggle<cr>", { noremap = true, silent = true, desc = "Toggle indent lines" })
+keymap("n", "<leader>w", ":set wrap<cr>", { noremap = true, silent = true, desc = "Enable line wrap" })
+keymap("n", "<leader>nw", ":set nowrap<cr>", { noremap = true, silent = true, desc = "Disable line wrap" })
 keymap("n", "<leader>s", ":write<CR>", { desc = "Save changes to file" })
 keymap("n", "<leader>nh", ":nohl<CR>", { noremap = true, silent = true, desc = "Clear search highlights" })
 keymap("n", "<leader>zm", ":ZenMode<CR>", { noremap = true, silent = true, desc = "Toggle Zen Mode" })
