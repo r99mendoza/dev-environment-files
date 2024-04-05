@@ -61,7 +61,7 @@ local options = {
     laststatus = 2,
     cpoptions = "ceFs",                      -- Compatibility (with vi) options (':h cpo' for more info)
     sidescrolloff = 8,
-    guifont = "monospace:h17",               -- the font used in graphical neovim applications
+    -- guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
 -- Note: vim.opt:remove()
@@ -102,6 +102,3 @@ vim.api.nvim_create_autocmd({"BufReadPost"}, {
         end
     end
 })
-    
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]]

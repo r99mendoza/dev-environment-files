@@ -31,7 +31,6 @@ keymap("n", "<leader>s", ":write<CR>", { desc = "Save changes to file" })
 keymap("n", "<leader>zm", ":ZenMode<CR>", { noremap = true, silent = true, desc = "Toggle Zen Mode" })
 keymap("n", "<leader>wsq", 'ysiw"', { desc = "Word Surround Quotes" })
 
-
 -- Stay in indent mode in visual line mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
