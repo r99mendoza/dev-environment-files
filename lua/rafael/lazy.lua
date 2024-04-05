@@ -13,7 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ {import = "rafael.plugins" }, {import = "rafael.plugins.lsp" } }, {
+require("lazy").setup({ { import = "rafael.plugins" }, {import = "rafael.plugins.lsp" } }, {
     -- root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
     install = {
         missing = true, -- install missing plugins on startup. This doesn't increase startup time. Set false if no internet.

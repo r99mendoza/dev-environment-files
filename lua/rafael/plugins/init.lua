@@ -1,4 +1,3 @@
 return {
-    -- lua functions that many plugins use
-    "nvim-lua/plenary.nvim",
+    "nvim-lua/plenary.nvim", -- lua functions that many plugins use
 }

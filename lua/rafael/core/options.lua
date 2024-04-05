@@ -18,7 +18,7 @@ local options = {
     mousemodel = "extend",
     textwidth = 130,
     backspace = "indent,eol,start",          -- allow backspace on indent, end of line or insert mode start position
-    clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+    -- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
     completeopt = { "menuone", "noselect" }, -- mostly just for cmp
     conceallevel = 0,                        -- so that `` is visible in markdown files
     hlsearch = true,                         -- highlight all matches on previous search pattern
@@ -44,7 +44,7 @@ local options = {
     timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
     updatetime = 300,                        -- faster completion (4000ms default)
     number = true,                           -- set numbered lines
-    relativenumber = false,                  -- set relative numbered lines
+    relativenumber = true,                   -- set relative numbered lines
     numberwidth = 2,                         -- set number column width to 2 {default 4}
     signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
     wrap = true,                             -- display lines as one long line
@@ -72,6 +72,7 @@ local options = {
 
 vim.opt.shortmess:append("at")
 vim.opt.formatoptions:remove("t")
+vim.opt.clipboard:append("unnamedplus") -- allows neovim to access the system clipboard
 
 for k, v in pairs(options) do
     vim.opt[k] = v

@@ -2,9 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
-    -- dependencies not really needed, can delete
     dependencies = {
-        "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
     },
     config = function()
@@ -28,6 +26,7 @@ return {
                 "lua",
                 "html",
                 "vim",
+                "vimdoc",
                 "gitignore",
             },
             incremental_selection = {
@@ -40,8 +39,5 @@ return {
                 },
             },
         })
-
-        -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx (I DON'T THINK I NEED THIS)
-        -- require('ts_context_commentstring').setup {}
     end,
 }
