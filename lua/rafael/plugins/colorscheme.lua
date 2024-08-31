@@ -9,13 +9,17 @@ return {
 
       tokyonight.setup({
         style = "moon",
-        transparent = true,
+        transparent = false, -- Enable this to disable setting the background color
         styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
           comments = { italic = true },
           keywords = { italic = true },
-          functions = { italic = true },
-          sidebars = "transparent",
-          floats = "transparent",
+          functions = {},
+          variables = {},
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark",
+          floats = "dark",
         },
         dim_inactive = true, -- dims inactive windows
       })
@@ -38,9 +42,6 @@ return {
   --       no_underline = false,
   --     })
   --     vim.cmd([[colorscheme catppuccin]])
-  --     -- Enabling undercurl
-  --     -- vim.cmd([[highlight DiagnosticUnderlineError guisp='Red' gui=undercurl]])
-  --     -- vim.cmd([[highlight DiagnosticUnderlineWarn guisp='Cyan' gui=undercurl]])
   --   end
   -- }
   -- {
