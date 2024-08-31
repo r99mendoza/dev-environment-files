@@ -2,9 +2,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
-  dependencies = {
-    "windwp/nvim-ts-autotag",
-  },
+  -- dependencies = {
+  --   "windwp/nvim-ts-autotag",
+  -- },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
 
@@ -16,7 +16,7 @@ return {
       indent = { enable = true },
       auto_install = true, -- Set false if no internet.
       -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = { enable = true },
+      -- autotag = { enable = true },
       -- ensure these language parsers are installed
       ensure_installed = {
         "bash",
