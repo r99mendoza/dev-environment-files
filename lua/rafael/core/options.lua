@@ -33,7 +33,7 @@ local options = {
   writebackup = false,            -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   -- directory = "/tmp/$USER/vim",            -- list of dir names for the swap file
   -- undodir = "/tmp/$USER/vim/undodir",       -- list of dir names for undo files
-  undofile = true,                -- enable persistent undo
+  undofile = false,               -- enable persistent undo
   wildmenu = true,
   wildmode = "longest:full,full", -- Better control over file name completion when using :e <file>
   timeoutlen = 1000,              -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -72,7 +72,7 @@ end
 if vim.fn.exists("$VIRTUAL_ENV") then
   vim.g.python3_host_prog = vim.fn.substitute(vim.fn.system("/bin/which -a python3 | head -n1"), "\n", "", "g")
 else
-  vim.g.python3_host_prog = "$HOME/envs/python3.12.1/bin/python3"
+  vim.g.python3_host_prog = "$HOME/envs/python3.13.3/bin/python3"
 end
 
 -- vim.g.node_host_prog = "/bin/node"
