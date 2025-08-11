@@ -5,11 +5,9 @@ return {
     local conform = require("conform")
 
     conform.setup({
-      -- Map of filetype to formatters
       formatters_by_ft = {
-        -- TODO: ADD isort in front of black
-        python = { "black" },
         -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
         -- lua = { "stylua" },
         -- json = { "prettier" },
         -- yaml = { "prettier" },

@@ -14,6 +14,7 @@ local options = {
   mousefocus = true,
   mousehide = true,
   mousemodel = "extend",
+  mousemoveevent = true,
   textwidth = 130,
   backspace = "indent,eol,start", -- allow backspace on indent, end of line or insert mode start position
   -- completeopt = { "menuone", "noselect" }, -- mostly just for cmp
