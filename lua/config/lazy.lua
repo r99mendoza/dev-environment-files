@@ -22,7 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is done in init.lua by calling rafael.core first.
 
 -- Setup lazy.nvim
-require("lazy").setup({ { import = "rafael.plugins" }, { import = "rafael.plugins.lsp" } }, {
+require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
   -- root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
   install = {
     missing = true, -- install missing plugins on startup. This doesn't increase startup time. Set false if no internet.
