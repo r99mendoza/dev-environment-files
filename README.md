@@ -12,7 +12,7 @@
 
 ### Setup Requires
 
-- [Neovim](https://neovim.io/) (Version 0.9 or Later)
+- [Neovim](https://neovim.io/) (Version 0.11+)
 - [Nerd Font](https://www.nerdfonts.com/) - I use JetBrainsMonoNerdFontMono-Regular
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) - For Telescope Fuzzy Finder
 

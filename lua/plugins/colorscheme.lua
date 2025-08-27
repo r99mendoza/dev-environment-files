@@ -5,24 +5,16 @@ return {
     lazy = false,
     priority = 1000, -- make sure to load this before all other start plugins
     config = function()
-      local tokyonight = require("tokyonight")
-
-      tokyonight.setup({
+      require("tokyonight").setup({
         style = "moon",
         transparent = false, -- Enable this to disable setting the background color
-        styles = {
-          -- Style to be applied to different syntax groups
-          -- Value is any valid attr-list value for `:help nvim_set_hl`
-          comments = { italic = true },
-          keywords = { italic = true },
-          functions = {},
-          variables = {},
-          -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "dark",
-          floats = "dark",
-        },
         dim_inactive = true, -- dims inactive windows
       })
+      -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+      on_colors = function(colors)
+        colors.hint = colors.orange
+        colors.error = "#ff0000"
+      end
       vim.cmd([[colorscheme tokyonight]])
     end
   }

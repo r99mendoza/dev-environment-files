@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
--- This is done in init.lua by calling rafael.core first.
+-- This is done in init.lua by calling config.core first.
 
 -- Setup lazy.nvim
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {

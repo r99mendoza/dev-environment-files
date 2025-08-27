@@ -1,50 +1,48 @@
-local keymap = vim.api.nvim_set_keymap
-keymap("n", "<Space>", "<Nop>", { silent = true })
+local keymap = vim.keymap
+keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
-local opts = { noremap = true, silent = true }
+local function map(mode, lhs, rhs, desc)
+  -- If 'desc' is nil (not provided), leave it empty
+  desc = desc or ""
+  local opts = { noremap = true, silent = true, desc = desc }
+  keymap.set(mode, lhs, rhs, opts)
+end
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c"
+-- delete with "x" without copying into register
+map({ 'n', 'v' }, 'x', '"_x')
 
-keymap("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit insert mode with jk" })
-keymap("n", "<leader>nh", ":nohl<CR>", { noremap = true, silent = true, desc = "Clear search highlights" })
-keymap("n", "<leader>s", ":write<CR>", { desc = "Save changes to file" })
-keymap("n", "e", ":e<space>", { desc = "Toggle file open" })
-keymap("n", "<leader>w", ":set wrap<cr>", { noremap = true, silent = true, desc = "Enable line wrap" })
-keymap("n", "<leader>nw", ":set nowrap<cr>", { noremap = true, silent = true, desc = "Disable line wrap" })
-keymap("n", "<leader>wsq", 'ysiw"', { desc = "Word Surround Quotes" })
-keymap("n", "<leader>it", ":IBLToggle<cr>", { noremap = true, silent = true, desc = "Toggle indent lines" })
-keymap("n", "<leader>zm", ":ZenMode<CR>", { noremap = true, silent = true, desc = "Toggle Zen Mode" })
-vim.keymap.set("n", "<leader>ri", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true, desc = "Fill word under cursor" })
+map("i", "jk", "<ESC>", "Exit insert mode with jk")
+map("n", "<leader>nh", ":nohl<CR>", "Clear search highlights")
+map("n", "<leader>fe", ":echo (filereadable(expand(expand('<cfile>'))) ? 'File exists.' : 'File DOES NOT exist.')<CR>",
+  "Checks if path name under the cursor exists")
+map("n", "<leader>de",
+  ":echo (isdirectory(expand(expand('<cfile>'))) ? 'Directory exists.' : 'Directory DOES NOT exist.')<CR>",
+  "Checks if path name under the cursor exists and is a directory")
+map("n", "<leader>cb", ":lua print('Current Buffer File Name: ' .. vim.api.nvim_buf_get_name(0))<CR>",
+  "Gets full file name for current buffer")
+keymap.set("n", "e", ":e<space>", { noremap = true, desc = "Toggle file open" })
+map("n", "<leader>s", ":write<CR>", "Save changes to file")
+map("n", "<leader>w", ":set wrap<cr>", "Enable line wrap")
+map("n", "<leader>nw", ":set nowrap<cr>", "Disable line wrap")
+map("n", "<leader>it", ":IBLToggle<cr>", "Toggle indent lines")
 
 -- Remapping v -> V and V -> v
-keymap("n", "v", "V", opts)
-keymap("n", "V", "v", opts)
+map("n", "v", "V")
+map("n", "V", "v")
 
 -- Stay in indent mode in visual line mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Navigate buffers
-keymap("n", "<C-j>", ":bnext<CR>", opts)
-keymap("n", "<C-k>", ":bprevious<CR>", opts)
+map("n", "<C-j>", ":bnext<CR>", "Go to next buffer")
+map("n", "<C-k>", ":bprevious<CR>", "Go to previous buffer")
 
--- window management
-keymap("n", "<leader>v", ":vsplit<CR>", { desc = "Split window vertically" })
-keymap("n", "<leader>h", ":split<CR>", { desc = "Split window horizontally" })
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+-- splits
+map("n", "<leader>v", ":vsplit<CR>", "Split window vertically")
+map("n", "<leader>h", ":split<CR>", "Split window horizontally")
 
 -- Better Window Navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-l>", "<C-w>l")

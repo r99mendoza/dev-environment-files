@@ -4,7 +4,7 @@ return {
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
-      -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+      -- ensure these language parsers are installed
       ensure_installed = {
         "bash",
         "cpp",
@@ -60,5 +60,8 @@ return {
         },
       },
     })
+
+    -- use bash parser for zsh files
+    vim.treesitter.language.register("bash", "zsh")
   end,
 }
